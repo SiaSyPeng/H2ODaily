@@ -29,84 +29,77 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:id="@+id/relativeLayout">
 
             <ImageView
                 android:id="@+id/cup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
                 android:layout_centerHorizontal="true"
                 android:background="@color/lightBlue"
                 android:padding="10dp"
-                android:src="@drawable/cup"
+                android:src="@drawable/cup_1"
                 android:textStyle="bold" />
 
         </RelativeLayout>
 
-        <RelativeLayout
+
+
+        <Button
+            android:id="@+id/check_btn"
             android:layout_width="wrap_content"
-            android:layout_height="220dp"
-            android:layout_alignParentBottom="true">
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="30dp">
-                <ImageView
-                    android:id="@+id/exercise"
-                    android:layout_alignParentLeft="true"
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
-                    android:onClick="exerciseClick"
-                    android:src="@drawable/exercise"
-                    android:background="@color/lightPink"
-                    android:padding="7dp"
-                    android:textStyle="bold"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="130dp"
+            android:ems="10"
+            android:padding="10dp"
+            android:onClick="checkClick"
+            android:text="Check How Many More Cups of Water You Need"
+            android:background="@color/brightBlue"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/water"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
-                    android:onClick="waterClick"
-                    android:src="@drawable/water"
-                    android:background="@color/lightPink"
-                    android:padding="7dp"
-                    android:textStyle="bold"/>
+        <RelativeLayout
+            android:id="@+id/bottom_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp">
+            <ImageView
+                android:id="@+id/exercise"
+                android:layout_alignParentLeft="true"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="exerciseClick"
+                android:src="@drawable/exercise"
+                android:background="@color/lightPink"
+                android:padding="7dp"
+                android:textStyle="bold"/>
 
-            </RelativeLayout>
+            <ImageView
+                android:id="@+id/water"
+                android:layout_centerInParent="true"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="waterClick"
+                android:src="@drawable/water"
+                android:background="@color/lightPink"
+                android:padding="7dp"
+                android:textStyle="bold"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="30dp"
-                android:layout_alignParentBottom="true">
-                <ImageView
-                    android:id="@+id/weight"
-                    android:layout_alignParentLeft="true"
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
-                    android:onClick="weightClick"
-                    android:src="@drawable/weight"
-                    android:background="@color/lightPink"
-                    android:padding="7dp"
-                    android:textStyle="bold"/>
-
-                <ImageView
-                    android:id="@+id/weather"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="120dp"
-                    android:layout_height="70dp"
-                    android:onClick="weatherClick"
-                    android:src="@drawable/weather"
-                    android:background="@color/lightPink"
-                    android:padding="7dp"
-                    android:textStyle="bold"/>
-
-            </RelativeLayout>
-
+            <ImageView
+                android:id="@+id/weight"
+                android:layout_alignParentRight="true"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="weightClick"
+                android:src="@drawable/weight"
+                android:background="@color/lightPink"
+                android:padding="7dp"
+                android:textStyle="bold"/>
 
         </RelativeLayout>
 

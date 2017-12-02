@@ -78,8 +78,8 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         else {
             SplashActivity.editor.putString("name", str_Name);
             SplashActivity.editor.putString("password", str_RePassword);
-            SplashActivity.editor.putString("height", str_Height);
-            SplashActivity.editor.putString("weight", str_Weight);
+            SplashActivity.editor.putInt("height", Integer.parseInt(str_Height));
+            SplashActivity.editor.putInt("weight", Integer.parseInt(str_Weight));
 
             SplashActivity.editor.commit();
 

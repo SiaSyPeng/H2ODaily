@@ -1,67 +1,170 @@
 package com.yhack.h20.h2odaily;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.widget.EditText;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
-/**
- * Created by sosa on 12/2/17.
- */
+public class WaterDialog extends DialogFragment {
 
-public class WaterDialog extends android.support.v4.app.DialogFragment implements DialogInterface, Bundle {
+    // global members to use in both onStart and onCreate
+    private AlertDialog dialog;
+//    private Button submitButton;
 
-    public String inputvalue;
+    // public memebers to pass to host
+    public Integer checkcups() { return cups; }
+    public Integer cups = 0;
 
-    LayoutInflater inflater = LayoutInflater.from(this);
-    final View textenter = inflater.inflate(R.layout.dialog_add, null)
-    final EditText userinput = (EditText) textenter.findViewById(R.id.item_added);
-    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the Builder class for convenient dialog construction
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage("How much water did you drink?")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            inputvalue =  userinput.getText().toString();
+    /* The activity that creates an instance of this dialog fragment must
+    * implement this interface in order to receive event callbacks.
+    * Each method passes the DialogFragment in case the host needs to query it. */
+//    public interface DialogListener {
+//        public void onDialogPositiveClick(DialogFragment dialog);
+//    }
 
-                            // This is where we should update the amount of water drank
 
-                        }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            if (dialog != null && dialog.isShowing()) {
-                                dialog.dismiss();
-                            }// User cancelled the dialog
-                        }
-                    });
-            // Create the AlertDialog object and return it
-            return builder.create();
-        }
+ //   DialogListener mListener;
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // inflate dialog view
+        final View dialog_view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_water, null);
+        // build dialog
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+
+        dialog = alertDialogBuilder.show();
+        // set basic view for alertDialog
+        alertDialogBuilder.setView(dialog_view)
+                .setTitle("Water Consumption")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Log.d("WATER DIALOG", "positive clicked");
+                        SplashActivity.editor.putInt("cupsConsumed", cups);
+                        SplashActivity.editor.commit();
+                        Log.d("WATER DIALOG", "cups"+cups);
+
+
+                        //mListener.onDialogPositiveClick(WaterDialog.this);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Log.d("WATER DIALOG", "negative clicked");
+                        dialog.dismiss();
+                    }
+                });
+
+        final EditText water_consumed = dialog_view.findViewById(R.id.water_consumed);
+        water_consumed.addTextChangedListener(
+                new TextWatcher() {
+                      @Override
+                      public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                      }
+
+                      @Override
+                      public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                      }
+
+                      // update hint and enable submit button after password confirm text changed
+                      @Override
+                      public void afterTextChanged(Editable editable) {
+                          String cupsString = water_consumed.getText().toString();
+                          Log.d("WATER DIALOG", "cups" + cups);
+                          if (!cupsString.isEmpty()) {
+                              cups = Integer.parseInt(cupsString);
+                          }
+                      }
+                  });
+
+
+//        /* checks if password or user is valid
+//         * and adjust "matched/unmatched" accordingly
+//         * enable positive button only when matched*/
+//        final EditText water_consumed = dialog_view.findViewById(R.id.water_consumed);
+//
+//        pass_re.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+//
+//            // update hint and enable submit button after password confirm text changed
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//                // original password
+//                final EditText password_origin = getActivity().findViewById(R.id.passwrd);
+//                String password_origin_s = password_origin.getText().toString();
+//                // password retyped
+//                String pass_re_s = pass_re.getText().toString();
+//                // checkView to show if it is available
+//                final TextView pass_check = dialog_view.findViewById(R.id.Match);
+//
+//                // check if password retyped match the original password
+//                // and update checkView and save button
+//                if (password_origin_s.equals(pass_re_s)) {
+//                    Log.d("DIALOG", "Password Matches");
+//                    pass_check.setText(R.string.pass_match);
+//                    ifMatch = true;
+//                    if(submitButton!=null){
+//                        submitButton.setEnabled(true);
+//                    }
+//                } else {
+//                    pass_check.setText(R.string.pass_unmatch);
+//                    ifMatch = false;
+//                    if(submitButton!=null){
+//                        submitButton.setEnabled(false);
+//                    }
+//                }
+//            }
+//        });
+
+        dialog = alertDialogBuilder.create();
+        return dialog;
     }
 
+    // disable save button at the beginning
+    @Override
+    public void onStart(){
+        super.onStart();
+//        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true);
+//        submitButton = (Button) dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+    }
+
+    // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
+//
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//
+//        Activity activity;
+//
+//        if (context instanceof Activity){
+//            activity= (Activity) context;
+//            try {
+//                // Instantiate the NoticeDialogListener so we can send events to the host
+//                //mListener = (DialogListener) activity;
+//            } catch (ClassCastException e) {
+//                // The activity doesn't implement the interface, throw exception
+//                throw new ClassCastException(activity.toString()
+//                        + " must implement WaterDialog");
+//            }
+//            Log.d("DIALOG", "attached");
+//        }
+//
+//    }
 }
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-<EditText
-       android:id="@+id/item_added"
-               android:inputType="text"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="16dp"
-               android:layout_marginLeft="4dp"
-               android:layout_marginRight="4dp"
-               android:layout_marginBottom="4dp"
-               android:hint="@string/hint_add_item" />
-
-</LinearLayout>
