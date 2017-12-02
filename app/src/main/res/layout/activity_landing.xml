@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yhack.h20.h2odaily.LandingActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFE9B1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="116dp"
+            android:ems="10"
+            android:padding="10dp"
+            android:text="Login"
+            android:textColor="#ffff00"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:ems="10"
+            android:padding="10dp"
+            android:text="Register"
+            android:textColor="#ffff00"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
