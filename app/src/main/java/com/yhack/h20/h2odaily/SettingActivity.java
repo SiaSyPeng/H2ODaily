@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LogoutActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
     String str_getName, str_getPassword, str_getHeight, str_getWeight;
 
     TextView profile;
@@ -20,7 +20,7 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.logout);
+        setContentView(R.layout.setting);
 
         /*
          * fetching the all data corresponding to each key from shared
@@ -49,14 +49,14 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
         // TODO Auto-generated method stub
 
         /*
-         * logout button click does not delete the shared preference all data
+         * setting button click does not delete the shared preference all data
          * but it only delete the user login test key, you can do the login
          * again with same credentials. In order to delete the complete data
          * call editor.clear(); followed by editor.commit(); you can edit your
          * complete profile by doing registration once again, it will overwrite
          * your previous data.
          */
-        Toast.makeText(getApplicationContext(), "You have successfully logout",
+        Toast.makeText(getApplicationContext(), "You have successfully setting",
                 Toast.LENGTH_LONG).show();
         SplashActivity.editor.remove("loginTest");
 
@@ -72,7 +72,7 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(LogoutActivity.this,
+            Intent intent = new Intent(SettingActivity.this,
                     SplashActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("EXIT", true);
