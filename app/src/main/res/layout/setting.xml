@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yhack.h20.h2odaily.LogoutActivity">
+    tools:context="com.yhack.h20.h2odaily.SettingActivity">
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:background="@color/lightBlue">
 
         <TextView
             android:id="@+id/txt_welcome"
@@ -20,11 +21,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:autoLink="web"
-            android:text="Welcome to androidtutorialsrkt.blogspot.in"
-            android:textColor="#569B1A"
-            android:textSize="15sp"
+            android:text="Welcome to H2ODaily"
+            android:textColor="@color/lightPurple"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -32,12 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_welcome"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="5dp"
-            android:text="Contact Us at : robi.tomar72@gmail.com and call us at +918586875317 for help"
-            android:textColor="#569B1A"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:text="Profile"
+            android:textColor="@color/lightPurple"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -47,9 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="120dp"
             android:text="profile"
-            android:textColor="#0000FF"
+            android:textColor="@color/midBlue"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -63,7 +62,8 @@
             android:ems="10"
             android:padding="10dp"
             android:text="Logout"
-            android:textColor="#ffff00"
+            android:background="@color/lightPink"
+            android:textColor="@color/midBlue"
             android:textStyle="bold" />
 
     </RelativeLayout>

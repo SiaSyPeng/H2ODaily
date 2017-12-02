@@ -15,7 +15,7 @@
             android:id="@+id/parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFE9B1"
+            android:background="@color/lightBlue"
             android:orientation="vertical" >
 
             <EditText
@@ -93,7 +93,8 @@
                 android:ems="10"
                 android:padding="10dp"
                 android:text="Register"
-                android:textColor="#ffff00"
+                android:background="@color/lightPink"
+                android:textColor="@color/midBlue"
                 android:textStyle="bold" />
         </LinearLayout>
 

@@ -15,7 +15,7 @@
             android:id="@+id/parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFE9B1"
+            android:background="@color/lightBlue"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -48,7 +48,8 @@
                 android:ems="10"
                 android:padding="10dp"
                 android:text="Login"
-                android:textColor="#ffff00"
+                android:background="@color/lightPink"
+                android:textColor="@color/midBlue"
                 android:textStyle="bold" />
         </LinearLayout>
 

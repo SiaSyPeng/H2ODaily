@@ -9,7 +9,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFE9B1"
+        android:background="@color/lightBlue"
         android:orientation="vertical" >
 
         <Button
@@ -22,7 +22,8 @@
             android:ems="10"
             android:padding="10dp"
             android:text="Login"
-            android:textColor="#ffff00"
+            android:background="@color/lightPink"
+            android:textColor="@color/midBlue"
             android:textStyle="bold" />
 
         <Button
@@ -35,7 +36,8 @@
             android:ems="10"
             android:padding="10dp"
             android:text="Register"
-            android:textColor="#ffff00"
+            android:background="@color/lightPink"
+            android:textColor="@color/midBlue"
             android:textStyle="bold" />
 
     </RelativeLayout>

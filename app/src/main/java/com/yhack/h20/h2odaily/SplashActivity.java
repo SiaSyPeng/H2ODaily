@@ -42,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (str_login_test != null
                         && !str_login_test.toString().trim().equals("")) {
                     Intent send = new Intent(getApplicationContext(),
-                            LogoutActivity.class);
+                            SettingActivity.class);
                     startActivity(send);
                 }
                 /*
