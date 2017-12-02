@@ -19,7 +19,8 @@
         <activity android:name=".LandingActivity" />
         <activity android:name=".Registration" />
         <activity android:name=".Login" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>
