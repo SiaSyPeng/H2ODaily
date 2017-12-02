@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         mwaterdialog = new WaterDialog();
         mwaterdialog.show(getFragmentManager(), "dialogShow");
 
+
     }
 
     public void checkClick(View view) {

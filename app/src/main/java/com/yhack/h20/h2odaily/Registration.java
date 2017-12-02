@@ -70,7 +70,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         } else if (str_Weight.length() == 0) {
 
             Toast.makeText(getApplicationContext(),
-                    "Please enter your Weight", Toast.LENGTH_LONG)
+                    "Please enter your Intake", Toast.LENGTH_LONG)
                     .show();
 
         }
