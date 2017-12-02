@@ -10,7 +10,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public WaterDialog mwaterdialog;
     public BMIDialog mbmiDialog;
-    //public Integer cupsConsumed;
+    public ExerciseDialog mexercisedialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void exerciseClick(View view) {
+        mexercisedialog = new ExerciseDialog();
+        mexercisedialog.show(getFragmentManager(), "dialogShow");
 
     }
 

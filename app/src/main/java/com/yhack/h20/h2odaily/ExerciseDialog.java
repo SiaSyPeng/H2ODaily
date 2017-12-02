@@ -19,30 +19,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class BMIDialog extends DialogFragment {
+public class ExerciseDialog extends DialogFragment {
 
     // global members to use in both onStart and onCreate
     private AlertDialog dialog;
-    public Integer height;
-    public Integer weight;
+    public Integer exerciseHour;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // inflate dialog view
-        final View dialog_view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_bmi, null);
+        final View dialog_view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_exercise, null);
         // build dialog
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 
         dialog = alertDialogBuilder.show();
         // set basic view for alertDialog
         alertDialogBuilder.setView(dialog_view)
-                .setTitle("BMI UPDATE")
+                .setTitle("EXERCISE RECORD")
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         Log.d("BMI DIALOG", "positive clicked");
-                        SplashActivity.editor.putInt("height", height);
-                        SplashActivity.editor.putInt("weight", weight);
+                        SplashActivity.editor.putInt("exercise", exerciseHour);
                         SplashActivity.editor.commit();
 
                         //mListener.onDialogPositiveClick(WaterDialog.this);
@@ -57,10 +55,9 @@ public class BMIDialog extends DialogFragment {
                     }
                 });
 
-        final EditText height_now = dialog_view.findViewById(R.id.height_now);
-        final EditText weight_now = dialog_view.findViewById(R.id.weight_now);
+        final EditText exercise_st = dialog_view.findViewById(R.id.exercise);
 
-        height_now.addTextChangedListener(
+        exercise_st.addTextChangedListener(
                 new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -73,27 +70,9 @@ public class BMIDialog extends DialogFragment {
                     // update hint and enable submit button after password confirm text changed
                     @Override
                     public void afterTextChanged(Editable editable) {
-                        String height_string =height_now.getText().toString();
-                        if (height_string != null && !height_string.isEmpty()) {
-                            height = Integer.parseInt(height_string);
-                        }}});
-
-        weight_now.addTextChangedListener(
-                new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    }
-
-                    // update hint and enable submit button after password confirm text changed
-                    @Override
-                    public void afterTextChanged(Editable editable) {
-                        String weight_string =weight_now.getText().toString();
-                        if (weight_string != null && !weight_string.isEmpty()) {
-                            weight = Integer.parseInt(weight_string);
+                        String exercise_str =exercise_st.getText().toString();
+                        if (exercise_str != null && !exercise_str.isEmpty()) {
+                            exerciseHour = Integer.parseInt(exercise_str);
                         }}});
 
         dialog = alertDialogBuilder.create();

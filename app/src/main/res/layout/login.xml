@@ -49,7 +49,7 @@
                 android:padding="10dp"
                 android:text="Login"
                 android:background="@color/lightPink"
-                android:textColor="@color/midBlue"
+                android:textColor="@color/blueGreen"
                 android:textStyle="bold" />
         </LinearLayout>
 

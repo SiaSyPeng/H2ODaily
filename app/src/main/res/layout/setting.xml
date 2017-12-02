@@ -48,7 +48,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="120dp"
             android:text="profile"
-            android:textColor="@color/midBlue"
+            android:textColor="@color/blueGreen"
             android:textSize="15sp"
             android:textStyle="bold" />
 
