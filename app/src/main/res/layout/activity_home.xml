@@ -23,21 +23,6 @@
             android:padding="10dp"
             android:background="@color/lightBlue"
             android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:ems="10"
-            android:padding="10dp"
-            android:onClick="checkClick"
-
-            android:text="Check How Many More Cups of Water You Need"
-            android:background="@color/brightBlue"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +43,25 @@
 
         </RelativeLayout>
 
+
+
+        <Button
+            android:id="@+id/check_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="130dp"
+            android:ems="10"
+            android:padding="10dp"
+            android:onClick="checkClick"
+            android:text="Check How Many More Cups of Water You Need"
+            android:background="@color/brightBlue"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
         <RelativeLayout
+            android:id="@+id/bottom_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
