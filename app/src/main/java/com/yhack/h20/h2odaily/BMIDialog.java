@@ -11,6 +11,8 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,15 +77,41 @@ public class BMIDialog extends DialogFragment {
         final EditText height_now = dialog_view.findViewById(R.id.height_now);
         final EditText weight_now = dialog_view.findViewById(R.id.weight_now);
 
-        String height_string =height_now.getText().toString();
-        if (height_string != null && !height_string.isEmpty()) {
-            height = Integer.parseInt(height_string);
-        }
+        height_now.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    }
 
-        String weight_string =weight_now.getText().toString();
-        if (weight_string != null && !weight_string.isEmpty()) {
-            weight = Integer.parseInt(weight_string);
-        }
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    }
+
+                    // update hint and enable submit button after password confirm text changed
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+                        String height_string =height_now.getText().toString();
+                        if (height_string != null && !height_string.isEmpty()) {
+                            height = Integer.parseInt(height_string);
+                        }}});
+
+        weight_now.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    }
+
+                    // update hint and enable submit button after password confirm text changed
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+                        String weight_string =weight_now.getText().toString();
+                        if (weight_string != null && !weight_string.isEmpty()) {
+                            weight = Integer.parseInt(weight_string);
+                        }}});
 
         dialog = alertDialogBuilder.create();
         return dialog;

@@ -7,6 +7,8 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +53,8 @@ public class WaterDialog extends DialogFragment {
                         Log.d("WATER DIALOG", "positive clicked");
                         SplashActivity.editor.putInt("cupsConsumed", cups);
                         SplashActivity.editor.commit();
+                        Log.d("WATER DIALOG", "cups"+cups);
+
 
                         //mListener.onDialogPositiveClick(WaterDialog.this);
                         dialog.dismiss();
@@ -65,10 +69,26 @@ public class WaterDialog extends DialogFragment {
                 });
 
         final EditText water_consumed = dialog_view.findViewById(R.id.water_consumed);
-        String cupsString =water_consumed.getText().toString();
-        if (cupsString != null && !cupsString.isEmpty()) {
-            cups = Integer.parseInt(cupsString);
-        }
+        water_consumed.addTextChangedListener(
+                new TextWatcher() {
+                      @Override
+                      public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                      }
+
+                      @Override
+                      public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                      }
+
+                      // update hint and enable submit button after password confirm text changed
+                      @Override
+                      public void afterTextChanged(Editable editable) {
+                          String cupsString = water_consumed.getText().toString();
+                          Log.d("WATER DIALOG", "cups" + cups);
+                          if (!cupsString.isEmpty()) {
+                              cups = Integer.parseInt(cupsString);
+                          }
+                      }
+                  });
 
 
 //        /* checks if password or user is valid
