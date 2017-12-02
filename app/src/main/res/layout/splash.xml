@@ -19,9 +19,9 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="170dp"
-            android:text="Welcome To"
-            android:textColor="#569B1A"
-            android:textSize="15sp"
+            android:text="WELCOME TO"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -31,10 +31,9 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="200dp"
-            android:autoLink="web"
-            android:text="http://androidtutorialsrkt.blogspot.in/"
-            android:textColor="#569B1A"
-            android:textSize="15sp"
+            android:text="H2ODAILY"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
