@@ -23,18 +23,19 @@
             android:padding="10dp"
             android:background="@color/lightBlue"
             android:textStyle="bold"/>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:id="@+id/relativeLayout">
 
             <ImageView
                 android:id="@+id/cup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
                 android:layout_centerHorizontal="true"
                 android:background="@color/lightBlue"
                 android:padding="10dp"

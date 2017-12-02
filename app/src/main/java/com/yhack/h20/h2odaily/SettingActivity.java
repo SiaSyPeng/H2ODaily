@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
     String str_getName, str_getPassword;
-    Integer str_getHeight, str_getWeight, str_cups;
+    Integer str_getHeight, str_getWeight, str_cups, str_exercise;
 
     TextView profile;
 
@@ -33,6 +33,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         str_getHeight = SplashActivity.sh.getInt("height", 0);
         str_getWeight = SplashActivity.sh.getInt("weight", 0);
         str_cups = SplashActivity.sh.getInt("cupsConsumed", 0);
+        str_exercise = SplashActivity.sh.getInt("exercise", 0);
 
 
         profile = (TextView) findViewById(R.id.txt_profile);
@@ -41,9 +42,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         /* set fetch data to textview, textview show the user complete profile */
 
-        profile.setText("Name : " + str_getName + "\n" + "\n"  + "Height : " + str_getHeight
+        profile.setText("Name : " + str_getName
+                + "\n" + "\n"  + "Height : " + str_getHeight
                 + "\n" + "\n" + "Weight : " + str_getWeight
-                + "\n" + "\n" + "Cups Consumed : " + str_cups);
+                + "\n" + "\n" + "Cups Consumed : " + str_cups
+                + "\n" + "\n" + "Exercise Minutes : " + str_exercise);
 
     }
 
