@@ -72,6 +72,13 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    public void homeClick(View v) {
+        Intent sendToLoginandRegistration = new Intent(getApplicationContext(),
+                HomeActivity.class);
+
+        startActivity(sendToLoginandRegistration);
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {

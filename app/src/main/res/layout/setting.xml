@@ -52,6 +52,22 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
+
+        <Button
+            android:id="@+id/backHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:ems="10"
+            android:onClick="homeClick"
+            android:padding="10dp"
+            android:text="Home"
+            android:background="@color/lightPink"
+            android:textColor="@color/blueGreen"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/logout"
             android:layout_width="wrap_content"
@@ -63,7 +79,7 @@
             android:padding="10dp"
             android:text="Logout"
             android:background="@color/lightPink"
-            android:textColor="@color/midBlue"
+            android:textColor="@color/blueGreen"
             android:textStyle="bold" />
 
     </RelativeLayout>
