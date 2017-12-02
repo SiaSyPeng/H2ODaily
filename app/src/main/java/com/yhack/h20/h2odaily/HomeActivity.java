@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void waterClick(View view) {
-
+        WaterDialog waterpopup = new WaterDialog(new Builder)
     }
 
     private void weatherClick(View view) {
