@@ -6,10 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeActivity extends AppCompatActivity implements WaterDialog.DialogListener{
+public class HomeActivity extends AppCompatActivity {
 
     public WaterDialog mwaterdialog;
-    public Integer cupsConsumed;
+    public BMIDialog mbmiDialog;
+    //public Integer cupsConsumed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,7 @@ public class HomeActivity extends AppCompatActivity implements WaterDialog.Dialo
 
     }
 
-    @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        cupsConsumed = mwaterdialog.checkcups();
-    }
-
-    public void weatherClick(View view) {
+    public void checkClick(View view) {
 
     }
 
@@ -44,6 +40,8 @@ public class HomeActivity extends AppCompatActivity implements WaterDialog.Dialo
     }
 
     public void weightClick(View v) {
+        mbmiDialog = new BMIDialog();
+        mbmiDialog.show(getFragmentManager(), "dialogShow");
 
     }
 

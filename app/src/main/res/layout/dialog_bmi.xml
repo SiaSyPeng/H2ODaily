@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/height_now"
+        android:hint="Update Weight(in g)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/height_now"
+        android:layout_alignStart="@+id/height_now"
+        android:layout_below="@+id/height_now"
+        android:layout_margin="10dp"
+        android:hint="Update Height(in cm)"
+        android:inputType="number" />
+</LinearLayout>
+

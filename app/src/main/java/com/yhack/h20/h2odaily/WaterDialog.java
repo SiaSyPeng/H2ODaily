@@ -27,12 +27,12 @@ public class WaterDialog extends DialogFragment {
     /* The activity that creates an instance of this dialog fragment must
     * implement this interface in order to receive event callbacks.
     * Each method passes the DialogFragment in case the host needs to query it. */
-    public interface DialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog);
-    }
+//    public interface DialogListener {
+//        public void onDialogPositiveClick(DialogFragment dialog);
+//    }
 
 
-    DialogListener mListener;
+ //   DialogListener mListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -48,15 +48,18 @@ public class WaterDialog extends DialogFragment {
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.d("DIALOG", "positive clicked");
-                        mListener.onDialogPositiveClick(WaterDialog.this);
+                        Log.d("WATER DIALOG", "positive clicked");
+                        SplashActivity.editor.putInt("cupsConsumed", cups);
+                        SplashActivity.editor.commit();
+
+                        //mListener.onDialogPositiveClick(WaterDialog.this);
                         dialog.dismiss();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.d("DIALOG", "negative clicked");
+                        Log.d("WATER DIALOG", "negative clicked");
                         dialog.dismiss();
                     }
                 });
@@ -123,25 +126,25 @@ public class WaterDialog extends DialogFragment {
     }
 
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        Activity activity;
-
-        if (context instanceof Activity){
-            activity= (Activity) context;
-            try {
-                // Instantiate the NoticeDialogListener so we can send events to the host
-                mListener = (DialogListener) activity;
-            } catch (ClassCastException e) {
-                // The activity doesn't implement the interface, throw exception
-                throw new ClassCastException(activity.toString()
-                        + " must implement WaterDialog");
-            }
-            Log.d("DIALOG", "attached");
-        }
-
-    }
+//
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//
+//        Activity activity;
+//
+//        if (context instanceof Activity){
+//            activity= (Activity) context;
+//            try {
+//                // Instantiate the NoticeDialogListener so we can send events to the host
+//                //mListener = (DialogListener) activity;
+//            } catch (ClassCastException e) {
+//                // The activity doesn't implement the interface, throw exception
+//                throw new ClassCastException(activity.toString()
+//                        + " must implement WaterDialog");
+//            }
+//            Log.d("DIALOG", "attached");
+//        }
+//
+//    }
 }
