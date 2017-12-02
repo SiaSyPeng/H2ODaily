@@ -1,10 +1,11 @@
 package com.yhack.h20.h2odaily;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,19 +13,21 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
-    private void settingClick(View view) {
+    public void settingClick(View v) {
+        Intent sendToSetting = new Intent(getApplicationContext(),
+                SettingActivity.class);
+
+        startActivity(sendToSetting);
+    }
+
+    public void waterClick(View view) {
+    }
+
+    public void weatherClick(View view) {
 
     }
 
-    private void waterClick(View view) {
-        WaterDialog waterpopup = new WaterDialog(new Builder)
-    }
-
-    private void weatherClick(View view) {
-
-    }
-
-    private void exerciseClick(View view) {
+    public void exerciseClick(View view) {
 
     }
 
