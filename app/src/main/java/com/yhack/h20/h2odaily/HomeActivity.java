@@ -21,7 +21,6 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void waterClick(View view) {
-
     }
 
     public void weatherClick(View view) {
