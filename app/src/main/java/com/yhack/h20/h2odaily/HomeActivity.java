@@ -15,4 +15,21 @@ public class HomeActivity extends AppCompatActivity {
     private void settingClick(View view) {
 
     }
+
+    private void waterClick(View view) {
+
+    }
+
+    private void weatherClick(View view) {
+
+    }
+
+    private void exerciseClick(View view) {
+
+    }
+
+    private void weightClick(View view) {
+
+    }
+
 }
