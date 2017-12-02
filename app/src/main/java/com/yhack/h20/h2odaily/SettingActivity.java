@@ -40,7 +40,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         profile.setText("Name : " + str_getName + "\n" + "\n" + "Password : "
                 + str_getPassword + "\n" + "\n" + "Height : " + str_getHeight
-                + "\n" + "\n" + "Mobile : " + str_getWeight);
+                + "\n" + "\n" + "Weight : " + str_getWeight);
 
     }
 
