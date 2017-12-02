@@ -35,7 +35,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         register.setOnClickListener(this);
     }
 
-    @Override
     public void onClick(View v) {
         // TODO Auto-generated method stub
         str_Name = edt_Name.getText().toString();
